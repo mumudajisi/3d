@@ -1,0 +1,89 @@
+.tags-view-wrapper {
+    box-shadow: 0 0px 10px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%);
+    .tags-view-wrapper {
+        .tags-view-item {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            height: 30px;
+            line-height: 30px;
+            color: #495060;
+            background: #fff;
+            padding: 0 8px;
+            padding: 0 12px 0 18px;
+            font-size: 12px;
+            margin-top: 2px;
+            &:not(:first-child) {
+                margin-left: 2px;
+            }
+            &.active {
+                position: relative;
+                color: rgb(22, 131, 250);
+                background-color: rgb(230, 247, 255);
+                &::after {
+                    width: 100%;
+                    height: 3px;
+                    content: "";
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    background-color: rgb(22, 131, 250);
+                }
+            }
+            &.isIndex {
+                padding: 0 15px 0 12px;
+            }
+            &:hover {
+                cursor: pointer;
+                @extend .active;
+            }
+        }
+    }
+    .contextmenu {
+        margin: 0;
+        background: #fff;
+        position: fixed;
+        z-index: 2000 !important;
+        list-style-type: none;
+        padding: 5px 0;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #333;
+        box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+        li {
+            margin: 0;
+            padding: 7px 16px;
+            cursor: pointer;
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
+    &::v-deep {
+        .tags-view-item {
+            .el-icon-close {
+                width: 16px;
+                height: 16px;
+                vertical-align: 3px;
+                border-radius: 50%;
+                text-align: center;
+                transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+                transform-origin: 100% 50%;
+                &:before {
+                    transform: scale(0.6);
+                    display: inline-block;
+                    vertical-align: -3px;
+                }
+                &:hover {
+                    background-color: #b4bccc;
+                    color: #fff;
+                }
+                &.hidden {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
